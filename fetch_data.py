@@ -26,4 +26,4 @@ print len(p_string)
 #for i in soup:
 #    print i
 
-#print style
+print style
