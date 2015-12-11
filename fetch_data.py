@@ -27,8 +27,6 @@ source_no_tags = (BeautifulSoup(html,'lxml')).get_text()
 
 string_source = str(source_no_tags)
 string_source = string_source.replace('\r\n',' ')
+string_source = string_source.replace('=97','')
 string_list = string_source.split(' ')
 
-#print type(string_source)
-#print string_source
-print str(string_list)
