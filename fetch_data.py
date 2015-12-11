@@ -18,12 +18,18 @@ text_no_html = soup.get_text()
 
 style = soup.style
 
-
+text_list = text_no_html.split(' ')
 
 p_string = soup.p
 
-print len(p_string)
+#print len(p_string)
 #for i in soup:
 #    print i
 
-print style
+#print text_list
+
+for word in text_list:
+    if len(word) > 45:
+        del text_list.remove(word)
+
+print text_list
