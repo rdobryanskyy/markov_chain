@@ -4,7 +4,9 @@ __author__ = 'rostyslav'
 
 from bs4 import BeautifulSoup
 import nltk
-import re
+import markov_python.cc_markov
+
+markov_generate = markov_python.cc_markov.generate_text
 
 
 response = open('The Project Gutenberg eBook of Planet of the Damned, by Harry Harrison.txt', 'r')
@@ -29,4 +31,8 @@ string_source = str(source_no_tags)
 string_source = string_source.replace('\r\n',' ')
 string_source = string_source.replace('=97','')
 string_list = string_source.split(' ')
+
+
+text234 = markov_generate(string_list)
+
 
