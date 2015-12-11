@@ -23,7 +23,7 @@ def usual_words(unformated_text):
     return usual
 
 book_voc = usual_words(html)
-source_no_tags = BeautifulSoup(html,'lxml')
+source_no_tags = (BeautifulSoup(html,'lxml')).get_text()
 
 string_source = str(source_no_tags)
 string_source = string_source.replace('\r\n',' ')
@@ -31,4 +31,4 @@ string_list = string_source.split(' ')
 
 #print type(string_source)
 #print string_source
-print string_list
+print str(string_list)
