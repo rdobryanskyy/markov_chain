@@ -5,10 +5,28 @@ import urllib2
 from HTMLParser import HTMLParser
 import re
 from bs4 import BeautifulSoup
+import nltk
+#nltk.download('all')
 
 response = open('The Project Gutenberg eBook of Planet of the Damned, by Harry Harrison.txt', 'r')
 html = response.read()
 
+
+
+def usual_words(text):
+    usual = []
+    text_vocab = set(w.lower() for w in text if w.isalpha())
+    english_vocab = set(w.lower() for w in nltk.corpus.words.words())
+    for w in text_vocab:
+        if w == english_vocab:
+            usual.append(w)
+    return sorted(usual)
+
+print usual_words(html)
+
+
+
+"""
 soup = BeautifulSoup(html,'lxml')
 
 text_no_html = soup.get_text()
@@ -28,8 +46,4 @@ p_string = soup.p
 
 #print text_list
 
-for word in text_list:
-    if len(word) > 45:
-        del text_list.remove(word)
-
-print text_list
+"""
