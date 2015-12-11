@@ -31,6 +31,8 @@ string_source = string_source.replace('=97','')
 string_list = string_source.split(' ')
 
 
-MarkovChain.add_string(3,str(string_list))
+new_book = MarkovChain(string_list)
+
+print MarkovChain.generate_text(string_list)
 
 
