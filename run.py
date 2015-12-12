@@ -7,4 +7,4 @@ getfilefrom = comunication_layer.GetFile()
 html = getfilefrom.readfile()
 newbook = fetch_data.Create_Text(html)
 
-print newbook.generate_text(100)
+print newbook.generate_text(5000)
