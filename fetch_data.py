@@ -13,7 +13,7 @@ html = getfilefrom.readfile()
 def usual_words(unformated_text):
     soup = BeautifulSoup(unformated_text,'lxml')
     text_no_html = soup.get_text()
-    text = text_no_html.split(' ')
+    text = text_no_html.split()
     usual = []
     text_vocab = set(w.lower() for w in text if w.isalpha())
     english_vocab = set(w.lower() for w in nltk.corpus.words.words())
@@ -28,7 +28,11 @@ source_no_tags = (BeautifulSoup(html,'lxml')).get_text()
 string_source = str(source_no_tags)
 string_source = string_source.replace('\r\n',' ')
 string_source = string_source.replace('=97','')
-string_list = string_source.split(' ')
+string_source = string_source.replace('attr(title)','')
+string_source = string_source.replace('=','')
+string_source = string_source.replace('[','')
+string_source = string_source.replace(']','')
+string_list = string_source.split()
 
 
 markov = markovlib.Markov(string_list)
