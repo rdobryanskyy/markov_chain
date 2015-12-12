@@ -4,12 +4,11 @@ __author__ = 'rostyslav'
 
 from bs4 import BeautifulSoup
 import nltk
-from markov_python.cc_markov import MarkovChain
 import markovlib
+import comunication_layer
 
-
-response = open('The Project Gutenberg eBook of Planet of the Damned, by Harry Harrison.txt', 'r')
-html = response.read()
+getfilefrom = comunication_layer.GetFile()
+html = getfilefrom.readfile()
 
 def usual_words(unformated_text):
     soup = BeautifulSoup(unformated_text,'lxml')
@@ -32,8 +31,9 @@ string_source = string_source.replace('=97','')
 string_list = string_source.split(' ')
 
 
-#new_book = MarkovChain(string_list)
-
 markov = markovlib.Markov(string_list)
 
-print markov.generate_markov_text(500)
+#print markov.generate_markov_text(500)
+
+
+print markov.generate_markov_text(1700)
