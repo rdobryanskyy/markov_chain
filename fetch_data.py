@@ -3,9 +3,9 @@ __author__ = 'rostyslav'
 
 
 from bs4 import BeautifulSoup
-import nltk
+#import nltk
 import markovlib
-import comunication_layer
+#import comunication_layer
 
 
 class Create_Text(object):
