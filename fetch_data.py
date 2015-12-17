@@ -48,4 +48,4 @@ class Create_Text(object):
         markov = markovlib.Markov(clean)
         #print markov
         #return markov.generate_markov_text(number)
-        print markov.generate_markov_text(number)
+        return markov.generate_markov_text(number)
